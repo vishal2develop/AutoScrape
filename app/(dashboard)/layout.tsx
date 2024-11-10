@@ -2,6 +2,7 @@ import BreadCrumbHeader from "@/components/BreadCrumbHeader";
 import DesktopSidebar, { MobileSidebar } from "@/components/Sidebar";
 import { ModeToggle } from "@/components/ThemeModeToggle";
 import { Separator } from "@/components/ui/separator";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import React from "react";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
@@ -14,6 +15,9 @@ const layout = ({ children }: { children: React.ReactNode }) => {
           <BreadCrumbHeader />
           <div className="gap-1 flex items-center">
             <ModeToggle />
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
         </header>
         <Separator />
