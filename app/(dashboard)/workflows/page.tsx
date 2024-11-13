@@ -38,7 +38,11 @@ const UserWorkflowSkeleton = () => {
 
 const UserWorkflows = async () => {
   const workflows = await GetWorkflowsForUser();
+  console.log("workflows:", workflows.length);
+
   if (!workflows) {
+    console.log("err");
+
     return (
       <Alert variant={"destructive"}>
         <AlertCircle className="w-4 h-4" />

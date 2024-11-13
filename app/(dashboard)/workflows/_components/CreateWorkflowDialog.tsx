@@ -66,7 +66,7 @@ const CreateWorkflowDialog = ({ triggerText }: ICreateWorkflowDialog) => {
       open={open}
       onOpenChange={() => {
         form.reset(); // to clear previous values and rest form state
-        setOpen(open);
+        setOpen((prev) => !prev);
       }}
     >
       <DialogTrigger asChild>
